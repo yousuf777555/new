@@ -1,0 +1,25 @@
+struct adi *addatposition(struct adi *start,int data,int position)
+{
+	struct adi *temp,*p;
+	int i;
+	p=start;
+	for(i=1;i<position-1 && p!=NULL;i++)
+		p=p->link;
+	if(p==NULL)
+		printf("there are less %d elements\n",position);
+	else
+	{
+		     temp=(struct adi *)malloc(sizeof(struct adi));
+        temp->info=data;
+	if(position==1)
+	{
+		temp->link=start;
+		start=temp;
+	}
+	else
+	{
+		temp->link=p->link;
+		p->link=temp;
+	}
+	}
+}
