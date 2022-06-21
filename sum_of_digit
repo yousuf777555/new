@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main()
+{
+  char str[256],sum=0;
+  printf("C Program to sum all digits of a String\n");
+  printf("Please enter a string : ");
+  scanf("%[^\n]",str);
+  int len= strlen(str);
+  for(int i=0; i<len; i++){
+      if(isdigit(str[i])){
+        sum=sum+(str[i]-'0');
+      }
+  }
+  printf("Sum of digits inside string is = %d",sum);
+  return 0;
+}
